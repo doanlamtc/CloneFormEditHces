@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <title>Responsive Form with 5.2.3 Columns</title>
+    <style>
+        .title-hr {
+            font-size: 16px;
+            font-weight: 500;
+            position: relative;
+            min-height: 42px;
+        }
+
+        .title-hr p {
+            position: absolute;
+            padding-right: 20px;
+            line-height: 40px;
+            background-color: #fff;
+            z-index: 1
+        }
+
+        .title-hr hr {
+            position: absolute;
+            top: 0;
+            margin-top: 20px;
+            z-index: 0;
+            width: 100%;
+            right: 0;
+            border-width: 3px
+        }
+
+        .title-hr a {
+            position: absolute;
+            top: 0;
+            margin-top: 6px;
+            left: auto;
+            right: 0;
+            color: #f23f44 !important;
+            padding: 4px 0;
+            cursor: pointer;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: #ebebeb;
+            text-align: center
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <section class="content">
+            <div class="row form-group m-0">
+                <div class="col-md-12 pl-70 pr-50">
+                    <div class="row my-parent-title">
+                        <div class="my-title-flex"><!---->
+                            <p class="title-create"> Thông tin cá nhân </p>
+                            <!----><!----><!----><!---->
+                        </div>
+                        <div class="my-button-flex"><button appsvbackbutton="" class="btn btn-sm btn-default m-l-5"><i
+                                    class="fal fa-times"></i> Hủy </button><!----><button
+                                class="btn btn-sm btn-aqua m-l-5"><i class="fal fa-save"></i> Lưu
+                            </button><!----><button class="btn btn-sm btn-primary m-l-5" type="button"> Bước tiếp theo
+                                <i class="fal fa-long-arrow-right"></i></button><!----></div>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col-md-12 pl-70 pr-50">
+                        <div class="content-main" id="mm-active-form">
+                            <!-- <ul  class="list-step">
+                                <li  class="active"> 1 </li>
+                                <li > 2 </li>
+                                <li > 3 </li>
+                                <li > 4 </li>
+                                <li > 5 </li>
+                            </ul> -->
+                            <form novalidate="" class="ng-invalid ng-dirty ng-touched"><button
+                                    style="display: none"></button>
+                                <div class="row">
+                                    <div class="col-md-9 border-right">
+                                        <div class="row form-group">
+                                            <div class="col-md-4">
+                                                <label class="control-label">Họ và tên <span
+                                                        class="text-danger">*</span></label>
+                                                <div class="input-group">
+                                                    <input autofocus="" class="form-control" id="txtHoVaTen"
+                                                        list="listUngVien" maxlength="50" placeholder="Nhập ...">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-2">
+                                                <label class="control-label">Dân tộc</label>
+                                                <select class="form-control" name="danToc">
+                                                    <!-- Các tùy chọn dân tộc có thể được thêm vào đây -->
+                                                </select>
+                                            </div>
+
+                                            <div class="col-md-2">
+                                                <label class="control-label">Giới tính <span
+                                                        class="text-danger">*</span></label>
+                                                <select class="form-control" name="gioiTinh">
+                                                    <option value="male">Nam</option>
+                                                    <option value="female">Nữ</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="col-md-4">
+                                                <label class="control-label">Ngày sinh <span
+                                                        class="text-danger">*</span></label>
+                                                <div class="input-group date">
+                                                    <input type="date" class="form-control" id="dobInput" name="dob">
+                                                    <span class="input-group-addon" aria-expanded="false"><i
+                                                            class="fal fa-calendar"></i></span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row form-group">
+                                            <div class="col-md-4">
+                                                <label class="control-label">Số CMND/CCCD <span
+                                                        class="text-danger">*</span></label>
+                                                <input class="form-control" formcontrolname="cmnd" maxlength="12"
+                                                    numbersonlythang="" placeholder="Nhập ...">
+                                            </div>
+
+                                            <div class="col-md-4">
+                                                <label class="control-label">Nơi cấp</label>
+                                                <div class="input-group">
+                                                    <input class="form-control" maxlength="200" placeholder="Nhập ...">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-4">
+                                                <label class="control-label">Ngày cấp</label>
+                                                <div class="input-group date">
+                                                    <input type="date" class="form-control" id="dateIndentity"
+                                                        name="dob">
+                                                    <span class="input-group-addon" aria-expanded="false"><i
+                                                            class="fal fa-calendar"></i></span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="title-hr">
+                                            <p>Loại bảo hiểm đang tham gia <span class="text-danger">*</span></p>
+                                            <hr>
+                                        </div>
+
+                                        <div class="row form-group mb-0">
+                                            <form novalidate="" class="ng-untouched ng-pristine ng-invalid">
+                                                <button style="display: none"></button>
+                                                <div class="col-md-4 mb-3">
+                                                    <div class="form-check">
+                                                        <input type="checkbox" class="form-check-input"
+                                                            id="bhxhCheckbox" value="15" name="baoHiem[]">
+                                                        <label class="form-check-label" for="bhxhCheckbox">Bảo hiểm xã
+                                                            hội (bắt buộc và tự nguyện)</label>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-4 mb-3">
+                                                    <div class="form-check">
+                                                        <input type="checkbox" class="form-check-input"
+                                                            id="bhtnCheckbox" value="1" name="baoHiem[]">
+                                                        <label class="form-check-label" for="bhtnCheckbox">Bảo hiểm thất
+                                                            nghiệp</label>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-4 mb-3">
+                                                    <div class="form-check">
+                                                        <input type="checkbox" class="form-check-input"
+                                                            id="bhnthCheckbox" value="4" name="baoHiem[]">
+                                                        <label class="form-check-label" for="bhnthCheckbox">Bảo hiểm
+                                                            nhân thọ</label>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-4 mb-3">
+                                                    <div class="form-check">
+                                                        <input type="checkbox" class="form-check-input" id="ctgCheckbox"
+                                                            value="8" name="baoHiem[]">
+                                                        <label class="form-check-label" for="ctgCheckbox">Chưa tham
+                                                            gia</label>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-4 mb-3">
+                                                    <div class="form-check">
+                                                        <input type="checkbox" class="form-check-input"
+                                                            id="bhytCheckbox" value="3" name="baoHiem[]">
+                                                        <label class="form-check-label" for="bhytCheckbox">Bảo hiểm y
+                                                            tế</label>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+
+                                        <div class="title-hr">
+                                            <p>Trình độ học vấn <span class="text-danger">*</span></p>
+                                            <hr>
+                                        </div>
+
+                                        <div class="row form-group mb-0">
+                                            <div class="col-md-6">
+                                                <div class="form-check">
+                                                    <input type="radio" class="form-check-input" id="chuaTotNghiep"
+                                                        value="Chưa tốt nghiệp Tiểu học" name="trinhDoHocVan">
+                                                    <label class="form-check-label" for="chuaTotNghiep">Chưa tốt nghiệp
+                                                        Tiểu học</label>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <div class="form-check">
+                                                    <input type="radio" class="form-check-input" id="totNghiepTieuHoc"
+                                                        value="Tốt nghiệp Tiểu học" name="trinhDoHocVan">
+                                                    <label class="form-check-label" for="totNghiepTieuHoc">Tốt nghiệp
+                                                        Tiểu học</label>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <div class="form-check">
+                                                    <input type="radio" class="form-check-input"
+                                                        id="totNghiepTrungHocCoSo" value="Tốt nghiệp Trung học cơ sở"
+                                                        name="trinhDoHocVan">
+                                                    <label class="form-check-label" for="totNghiepTrungHocCoSo">Tốt
+                                                        nghiệp Trung học cơ sở</label>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <div class="form-check">
+                                                    <input type="radio" class="form-check-input"
+                                                        id="totNghiepTrungHocPhoThong"
+                                                        value="Tốt nghiệp Trung học phổ thông" name="trinhDoHocVan">
+                                                    <label class="form-check-label" for="totNghiepTrungHocPhoThong">Tốt
+                                                        nghiệp Trung học phổ thông</label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="title-hr">
+                                            <p>Trình độ CMKT cao nhất <span class="text-danger">*</span></p>
+                                            <hr>
+                                        </div>
+
+                                        <div class="row form-group mb-0">
+                                            <div class="col-md-4">
+                                                <div class="form-check">
+                                                    <input type="radio" class="form-check-input" id="chuaQuaDaoTao"
+                                                        value="Chưa qua đào tạo" name="trinhDoCMKT">
+                                                    <label class="form-check-label" for="chuaQuaDaoTao">Chưa qua đào
+                                                        tạo</label>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-4">
+                                                <div class="form-check">
+                                                    <input type="radio" class="form-check-input" id="soCap"
+                                                        value="Sơ cấp" name="trinhDoCMKT">
+                                                    <label class="form-check-label" for="soCap">Sơ cấp</label>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-4">
+                                                <div class="form-check">
+                                                    <input type="radio" class="form-check-input" id="cnktKhongBang"
+                                                        value="CNKT không bằng" name="trinhDoCMKT">
+                                                    <label class="form-check-label" for="cnktKhongBang">CNKT không
+                                                        bằng</label>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-4">
+                                                <div class="form-check">
+                                                    <input type="radio" class="form-check-input" id="trungCap"
+                                                        value="Trung cấp" name="trinhDoCMKT">
+                                                    <label class="form-check-label" for="trungCap">Trung cấp</label>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-4">
+                                                <div class="form-check">
+                                                    <input type="radio" class="form-check-input" id="caoDang"
+                                                        value="Cao đẳng" name="trinhDoCMKT">
+                                                    <label class="form-check-label" for="caoDang">Cao đẳng</label>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-4">
+                                                <div class="form-check">
+                                                    <input type="radio" class="form-check-input" id="daiHoc"
+                                                        value="Đại học" name="trinhDoCMKT">
+                                                    <label class="form-check-label" for="daiHoc">Đại học</label>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-4">
+                                                <div class="form-check">
+                                                    <input type="radio" class="form-check-input" id="thacSi"
+                                                        value="Thạc sĩ" name="trinhDoCMKT">
+                                                    <label class="form-check-label" for="thacSi">Thạc sĩ</label>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-4">
+                                                <div class="form-check">
+                                                    <input type="radio" class="form-check-input" id="tienSi"
+                                                        value="Tiến sĩ" name="trinhDoCMKT">
+                                                    <label class="form-check-label" for="tienSi">Tiến sĩ</label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row form-group">
+                                            <div class="col-md-12">
+                                                <label class="label-control">Chuyên ngành đào tạo</label>
+                                                <input class="form-control ng-untouched ng-pristine ng-invalid"
+                                                    formcontrolname="chuyenNganh" maxlength="200" placeholder="Nhập..."
+                                                    svtrim="">
+                                            </div>
+                                        </div>
+
+                                        <div class="row form-group">
+                                            <div class="col-md-12">
+                                                <label class="label-control">Tên trường tốt nghiệp</label>
+                                                <input class="form-control ng-untouched ng-pristine ng-invalid"
+                                                    formcontrolname="truongTotNghiep" maxlength="200"
+                                                    placeholder="Nhập..." svtrim="">
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <button class="btn btn-config btn-primary"
+                                                    title="Thêm trình độ CMKT khác">
+                                                    <i class="far fa-plus"></i>
+                                                </button>
+                                                <h4 class="inline ml-2">Trình độ CMKT khác</h4>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col-md-3">
+                                        <h4>Thông tin liên lạc</h4>
+                                        <div class="bg-form-right">
+                                            <div class="row form-group">
+                                                <div class="col-md-12">
+                                                    <label class="control-label">Số điện thoại <span
+                                                            class="text-danger">*</span></label>
+                                                </div>
+                                                <br>
+                                                <div class="col-md-12">
+                                                    <input class="form-control ng-untouched ng-pristine ng-invalid"
+                                                        formcontrolname="sdt" maxlength="11" minlength="10"
+                                                        numbersonlythang="" placeholder="Nhập..." type="text">
+                                                </div>
+                                            </div>
+
+                                            <div class="row form-group">
+                                                <div class="col-md-12">
+                                                    <label class="control-label">Email <span
+                                                            class="text-danger">*</span></label>
+                                                </div>
+                                                <br>
+                                                <div class="col-md-12">
+                                                    <input class="form-control ng-untouched ng-pristine ng-invalid"
+                                                        formcontrolname="email" maxlength="100" placeholder="Nhập..."
+                                                        svtrim="" type="email">
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <label class="control-label">Liên hệ khác (nếu có)</label>
+                                                </div>
+                                                <br>
+                                                <div class="col-md-12">
+                                                    <input class="form-control ng-untouched ng-pristine ng-valid"
+                                                        formcontrolname="lienHeKhac" maxlength="100"
+                                                        placeholder="Nhập..." svtrim="" type="text">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <h4>Đối tượng ưu tiên (nếu có)</h4>
+                                        <div class="bg-form-right">
+                                            <!-- Checkbox components -->
+                                            <div class="mb-3">
+                                                <div class="form-check">
+                                                    <input type="checkbox" class="form-check-input"
+                                                        id="nguoiKhuyetTatCheckbox" value="3" name="undefined">
+                                                    <label class="form-check-label" for="nguoiKhuyetTatCheckbox">Người
+                                                        khuyết tật</label>
+                                                </div>
+                                            </div>
+
+                                            <div class="mb-3">
+                                                <div class="form-check">
+                                                    <input type="checkbox" class="form-check-input"
+                                                        id="nguoiDanTocThieuSoCheckbox" value="5" name="undefined">
+                                                    <label class="form-check-label"
+                                                        for="nguoiDanTocThieuSoCheckbox">Người dân tộc thiểu số</label>
+                                                </div>
+                                            </div>
+
+                                            <div class="mb-3">
+                                                <div class="form-check">
+                                                    <input type="checkbox" class="form-check-input"
+                                                        id="nguoiThuocHoNgheoCheckbox" value="1" name="undefined">
+                                                    <label class="form-check-label"
+                                                        for="nguoiThuocHoNgheoCheckbox">Người thuộc hộ nghèo, cận
+                                                        nghèo</label>
+                                                </div>
+                                            </div>
+
+                                            <div class="mb-3">
+                                                <div class="form-check">
+                                                    <input type="checkbox" class="form-check-input"
+                                                        id="boDoiXuatNguCheckbox" value="14" name="undefined">
+                                                    <label class="form-check-label" for="boDoiXuatNguCheckbox">Bộ đội
+                                                        xuất ngũ</label>
+                                                </div>
+                                            </div>
+
+                                            <div class="mb-3">
+                                                <div class="form-check">
+                                                    <input type="checkbox" class="form-check-input" id="khacCheckbox"
+                                                        value="6043" name="undefined">
+                                                    <label class="form-check-label" for="khacCheckbox">Khác (ghi
+                                                        rõ)</label>
+                                                </div>
+                                            </div>
+
+                                            <div class="mb-3">
+                                                <div class="form-check">
+                                                    <input type="checkbox" class="form-check-input"
+                                                        id="conThuongBinhCheckbox" value="13063" name="undefined">
+                                                    <label class="form-check-label" for="conThuongBinhCheckbox">Con
+                                                        thương binh</label>
+                                                </div>
+                                            </div>
+
+                                            <!-- Form for additional input -->
+                                            <form
+                                                class="row d-flex align-item-center mt-3 ng-untouched ng-pristine ng-valid"
+                                                novalidate="">
+                                                <button style="display: none"></button>
+                                                <div class="col-md-9">
+                                                    <input class="form-control ng-untouched ng-pristine ng-valid"
+                                                        maxlength="250" name="txtAddDoiTuongUuTien"
+                                                        placeholder="Tên đối tượng ưu tiên..." svtrim="" type="text">
+                                                </div>
+                                                <div class="col-md-2" style="padding-left: 0">
+                                                    <button class="btn btn-config btn-success" title="Lưu"><i
+                                                            class="far fa-check"></i></button>
+                                                </div>
+                                            </form>
+                                        </div>
+
+
+
+                                        <h4>Kỹ năng nghề (nếu có)</h4>
+                                        <div class="form-group mb-3">
+                                            <input class="form-control ng-untouched ng-pristine ng-valid"
+                                                formcontrolname="kyNangNghe" maxlength="200"
+                                                placeholder="Nhập kỹ năng nghề ..." svtrim="">
+                                        </div>
+                                        <div class="form-group">
+                                            <input class="form-control ng-untouched ng-pristine ng-valid"
+                                                formcontrolname="bacKyNangNghe" maxlength="200"
+                                                placeholder="Cấp bậc ..." svtrim="">
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 pl-70 pr-50 text-right"><button appsvbackbutton=""
+                        class="btn btn-sm btn-default m-l-5"><i class="fal fa-times"></i> Hủy </button><!----><button
+                        class="btn btn-sm btn-aqua m-l-5"><i class="fal fa-save"></i> Lưu
+                    </button><!----><button class="btn btn-sm btn-primary m-l-5" type="button"> Bước tiếp theo <i
+                            class="fal fa-long-arrow-right"></i></button><!----></div>
+            </div>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
